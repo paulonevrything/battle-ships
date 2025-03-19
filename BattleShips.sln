@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips", "BattleShips\BattleShips.csproj", "{6F1738AD-7EEA-45B8-A8E6-81FCA6EF6DDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips.Test", "BattleShips.Test\BattleShips.Test.csproj", "{8034534D-F069-4688-8D8B-F1E112C83370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6F1738AD-7EEA-45B8-A8E6-81FCA6EF6DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F1738AD-7EEA-45B8-A8E6-81FCA6EF6DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F1738AD-7EEA-45B8-A8E6-81FCA6EF6DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8034534D-F069-4688-8D8B-F1E112C83370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8034534D-F069-4688-8D8B-F1E112C83370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8034534D-F069-4688-8D8B-F1E112C83370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8034534D-F069-4688-8D8B-F1E112C83370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

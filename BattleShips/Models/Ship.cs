@@ -1,5 +1,3 @@
-using System;
-
 namespace BattleShips.Models;
 
 public class Ship

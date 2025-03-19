@@ -1,0 +1,16 @@
+using System;
+using BattleShips.Models;
+
+namespace BattleShips.Test.Models;
+
+public class DestroyerTest
+{
+    [Fact]
+    public void CreateDestroyer()
+    {
+        var destroyer = new Destroyer();
+
+        Assert.Equal("Destroyer", destroyer.ShipName);
+        Assert.Equal(4, destroyer.NumberOfSquares);
+    }
+}
