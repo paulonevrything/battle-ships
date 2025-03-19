@@ -10,7 +10,7 @@ public class BattleshipTest
     {
         var battleship = new Battleship("battleship1");
 
-        Assert.Equal("Battleship", battleship.ShipName);
+        Assert.Equal("Battleship", battleship.ShipType);
         Assert.Equal(5, battleship.NumberOfSquares);
         Assert.Equal("battleship1", battleship.ShipName);
     }

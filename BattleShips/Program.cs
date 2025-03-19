@@ -1,4 +1,5 @@
 ﻿using BattleShips.Models;
+using BattleShips.Utils;
 
 
 
@@ -13,7 +14,8 @@ var destroyer2 = new Destroyer("Destroyer 2");
 
 List<Ship> ships = new List<Ship> { battleShip, destroyer1, destroyer2 };
 
-var battleField = new BattleField(ships);
+RandomGenerator rand = new RandomGenerator();
+var battleField = new BattleField(ships, rand);
 
 string shot = "";
 

@@ -10,7 +10,7 @@ public class DestroyerTest
     {
         var destroyer = new Destroyer("destroyer1");
 
-        Assert.Equal("Destroyer", destroyer.ShipName);
+        Assert.Equal("Destroyer", destroyer.ShipType);
         Assert.Equal(4, destroyer.NumberOfSquares);
         Assert.Equal("destroyer1", destroyer.ShipName);
     }

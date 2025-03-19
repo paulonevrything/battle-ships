@@ -7,11 +7,10 @@ public class BattleField
 {
     public Dictionary<string, Ship> OccupiedPositions = new Dictionary<string, Ship>();
 
-    public BattleField(List<Ship> ships)
+    public BattleField(List<Ship> ships, RandomGenerator rand)
     {
         char[] xAxis = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
         int gridSize = 10;
-        RandomGenerator rand = new RandomGenerator();
 
         foreach (Ship ship in ships)
         {
