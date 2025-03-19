@@ -8,9 +8,10 @@ public class DestroyerTest
     [Fact]
     public void CreateDestroyer()
     {
-        var destroyer = new Destroyer();
+        var destroyer = new Destroyer("destroyer1");
 
         Assert.Equal("Destroyer", destroyer.ShipName);
         Assert.Equal(4, destroyer.NumberOfSquares);
+        Assert.Equal("destroyer1", destroyer.ShipName);
     }
 }

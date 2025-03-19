@@ -2,10 +2,12 @@ namespace BattleShips.Models;
 
 public class Destroyer : Ship
 {
-    public Destroyer()
+    public string ShipName { get; set; } = "";
+
+    public Destroyer(string shipName)
     {
         NumberOfSquares = 4;
-        ShipName = "Destroyer";
+        ShipType = "Destroyer";
+        ShipName = shipName;
     }
 }
-

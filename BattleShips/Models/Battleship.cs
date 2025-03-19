@@ -2,9 +2,11 @@ namespace BattleShips.Models;
 
 public class Battleship : Ship
 {
-    public Battleship()
+    public string ShipName { get; set; } = "";
+    public Battleship(string shipName)
     {
         NumberOfSquares = 5;
-        ShipName = "Battleship";
+        ShipType = "Battleship";
+        ShipName = shipName;
     }
 }

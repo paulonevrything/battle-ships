@@ -43,7 +43,7 @@ public class BattleField
                         break;
                     }
 
-                    OccupiedPositions.Add(position, ship.ShipName);
+                    OccupiedPositions.Add(position, ship.ShipType);
                     validPlacement = true;
                 }
 
