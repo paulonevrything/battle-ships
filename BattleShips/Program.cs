@@ -2,9 +2,12 @@
 using BattleShips.Utils;
 
 
-
+// Game intro
 Console.WriteLine("Starting Battleship!");
 Console.WriteLine("You can exit the game at any time by typing 'exit'");
+
+
+// Load all game artefacts
 
 int availableRounds = 15;
 
@@ -19,11 +22,7 @@ var battleField = new BattleField(ships, rand);
 
 string shot = "";
 
-foreach (KeyValuePair<string, Ship> entry in battleField.OccupiedPositions)
-{
-    Console.WriteLine("{0}, {1}", entry.Key, entry.Value.ShipType);
-}
-
+// Start game
 
 do
 {

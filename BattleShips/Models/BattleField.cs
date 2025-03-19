@@ -6,6 +6,7 @@ namespace BattleShips.Models;
 public class BattleField
 {
     public Dictionary<string, Ship> OccupiedPositions = new Dictionary<string, Ship>();
+    private HashSet<string> spentShots = new HashSet<string>();
 
     public BattleField(List<Ship> ships, RandomGenerator rand)
     {
@@ -54,7 +55,11 @@ public class BattleField
 
     public void RegisterHit(string shotLocation)
     {
-        if (OccupiedPositions.ContainsKey(shotLocation))
+        if (spentShots.Contains(shotLocation))
+        {
+            Console.WriteLine("Oops, you already hit this spot!!! Try again!!!");
+        }
+        else if (OccupiedPositions.ContainsKey(shotLocation))
         {
 
             var ship = OccupiedPositions[shotLocation];
@@ -71,6 +76,8 @@ public class BattleField
         {
             Console.WriteLine("Unfortunately, no hit this time!!! Try again");
         }
+
+        spentShots.Add(shotLocation);
     }
 }
 

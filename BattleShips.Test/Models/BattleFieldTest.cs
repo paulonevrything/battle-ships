@@ -83,7 +83,6 @@ public class BattleFieldTest
 
         // Assert
         Assert.Equal($"Unfortunately, no hit this time!!! Try again" + Environment.NewLine, _stringWriter.ToString());
-
     }
 
     [Fact]
@@ -103,6 +102,5 @@ public class BattleFieldTest
 
         Assert.Equal($"That's a successful shot!!! You hit a {ship.ShipType} called {ship.ShipName}" + Environment.NewLine
          + $"Congratulations!!! You have successfully sunk a {ship.ShipType} called {ship.ShipName}" + Environment.NewLine, _stringWriter.ToString());
-
     }
 }
