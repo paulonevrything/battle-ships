@@ -1,17 +1,17 @@
 using System;
+using BattleShips.Utils;
 
 namespace BattleShips.Models;
 
 public class BattleField
 {
     public Dictionary<string, Ship> OccupiedPositions = new Dictionary<string, Ship>();
-    public int score{ get; set; }
 
     public BattleField(List<Ship> ships)
     {
         char[] xAxis = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
         int gridSize = 10;
-        Random rand = new Random();
+        RandomGenerator rand = new RandomGenerator();
 
         foreach (Ship ship in ships)
         {
@@ -19,18 +19,18 @@ public class BattleField
 
             do
             {
-                bool isHorizontal = rand.Next(2) == 0;
+                bool isHorizontal = rand.GetRandomBool();
                 int startX, startY;
 
                 if (isHorizontal)
                 {
-                    startX = rand.Next(0, gridSize - ship.NumberOfSquares + 1);
-                    startY = rand.Next(0, gridSize);
+                    startX = rand.GetRandomInt(0, gridSize - ship.NumberOfSquares + 1);
+                    startY = rand.GetRandomInt(0, gridSize);
                 }
                 else
                 {
-                    startX = rand.Next(0, gridSize);
-                    startY = rand.Next(0, gridSize - ship.NumberOfSquares + 1);
+                    startX = rand.GetRandomInt(0, gridSize);
+                    startY = rand.GetRandomInt(0, gridSize - ship.NumberOfSquares + 1);
                 }
 
                 for (int i = 0; i < ship.NumberOfSquares; i++)
@@ -57,13 +57,12 @@ public class BattleField
     {
         if (OccupiedPositions.ContainsKey(shotLocation))
         {
-            score++;
-            
+
             var ship = OccupiedPositions[shotLocation];
 
             Console.WriteLine("That's a successful shot!!! You hit a {0} called {1}", ship.ShipType, ship.ShipName);
             ship.AvailableHits--;
-            
+
             if (ship.AvailableHits == 0)
             {
                 Console.WriteLine("Congratulations!!! You have successfully sunk a {0} called {1}", ship.ShipType, ship.ShipName);
