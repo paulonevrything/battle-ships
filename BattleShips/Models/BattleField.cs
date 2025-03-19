@@ -4,7 +4,8 @@ namespace BattleShips.Models;
 
 public class BattleField
 {
-    public Dictionary<string, string> OccupiedPositions = new Dictionary<string, string>();
+    public Dictionary<string, Ship> OccupiedPositions = new Dictionary<string, Ship>();
+    public int score{ get; set; }
 
     public BattleField(List<Ship> ships)
     {
@@ -43,7 +44,7 @@ public class BattleField
                         break;
                     }
 
-                    OccupiedPositions.Add(position, ship.ShipType);
+                    OccupiedPositions.Add(position, ship);
                     validPlacement = true;
                 }
 
@@ -52,5 +53,26 @@ public class BattleField
         }
     }
 
+    public void RegisterHit(string shotLocation)
+    {
+        if (OccupiedPositions.ContainsKey(shotLocation))
+        {
+            score++;
+            
+            var ship = OccupiedPositions[shotLocation];
+
+            Console.WriteLine("That's a successful shot!!! You hit a {0} called {1}", ship.ShipType, ship.ShipName);
+            ship.AvailableHits--;
+            
+            if (ship.AvailableHits == 0)
+            {
+                Console.WriteLine("Congratulations!!! You have successfully sunk a {0} called {1}", ship.ShipType, ship.ShipName);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Unfortunately, no hit this time!!! Try again");
+        }
+    }
 }
 
