@@ -5,7 +5,7 @@ public class Destroyer : Ship
     public Destroyer(string shipName)
     {
         NumberOfSquares = 4;
-        ShipType = "Destroyer";
+        ShipType = ShipType.Destroyer;
         ShipName = shipName;
         AvailableHits = 4;
     }

@@ -5,7 +5,7 @@ public class Battleship : Ship
     public Battleship(string shipName)
     {
         NumberOfSquares = 5;
-        ShipType = "Battleship";
+        ShipType = ShipType.Battleship;
         ShipName = shipName;
         AvailableHits = 5;
     }
